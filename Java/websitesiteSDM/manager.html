@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managers - JobPro Recruitment System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #007BFF;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Manager Portal</h1>
+        <a href="home.html">Back to Home</a>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="applicant.html">Applicants</a></li>
+            <li><a href="employers.html">Employers</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>View/Print Reports</h2>
+
+            <!-- Table with Dummy Data -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Report Title</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dummy Data Row 1 -->
+                    <tr>
+                        <td>Monthly Sales Report</td>
+                        <td>2024-12-01</td>
+                        <td>Completed</td>
+                        <td><button onclick="window.print()">Print Report</button></td>
+                    </tr>
+
+                    <!-- Dummy Data Row 2 -->
+                    <tr>
+                        <td>Quarterly Financial Report</td>
+                        <td>2024-11-15</td>
+                        <td>Completed</td>
+                        <td><button onclick="window.print()">Print Report</button></td>
+                    </tr>
+
+                    <!-- Dummy Data Row 3 -->
+                    <tr>
+                        <td>Employee Performance Review</td>
+                        <td>2024-10-25</td>
+                        <td>Pending</td>
+                        <td><button onclick="window.print()">Print Report</button></td>
+                    </tr>
+
+                    <!-- Dummy Data Row 4 -->
+                    <tr>
+                        <td>Job Applications Summary</td>
+                        <td>2024-12-05</td>
+                        <td>Completed</td>
+                        <td><button onclick="window.print()">Print Report</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JobPro Recruitment System. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

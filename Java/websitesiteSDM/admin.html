@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - JobPro Recruitment System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Portal</h1>
+        <a href="home.html">Back to Home</a>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="employers.html">Employers</a></li>
+            <li><a href="applicant.html">Applicants</a></li>
+            <li><a href="manager.html">Managers</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Manage Data</h2>
+            <button id="addEmployer">Add New Employer</button>
+            <button id="addApplicant">Add New Applicant</button>
+            <button id="deleteRecord">Delete All Records</button>
+
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>John Doe</td>
+                        <td>Employer</td>
+                        <td>johndoe@example.com</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Jane Smith</td>
+                        <td>Applicant</td>
+                        <td>janesmith@example.com</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>System Maintenance</h2>
+            <button id="runDiagnostics">Run Diagnostics</button>
+            <button id="updateSystem">Update System</button>
+            <button id="clearLogs">Clear Logs</button>
+
+            <table id="maintenanceTable">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Status</th>
+                        <th>Last Run</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Backup Database</td>
+                        <td>Completed</td>
+                        <td>2024-12-10</td>
+                    </tr>
+                    <tr>
+                        <td>System Update</td>
+                        <td>Pending</td>
+                        <td>2024-12-01</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JobPro Recruitment System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Add New Employer
+        document.getElementById('addEmployer').addEventListener('click', function () {
+            const table = document.querySelector('#dataTable tbody');
+            const newRow = `
+                <tr>
+                    <td>103</td>
+                    <td>Mary Johnson</td>
+                    <td>Employer</td>
+                    <td>maryjohnson@example.com</td>
+                    <td>
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
+                </tr>`;
+            table.insertAdjacentHTML('beforeend', newRow);
+        });
+
+        // Delete All Records
+        document.getElementById('deleteRecord').addEventListener('click', function () {
+            const table = document.querySelector('#dataTable tbody');
+            table.innerHTML = '';
+            alert('All records have been deleted!');
+        });
+
+        // Run Diagnostics
+        document.getElementById('runDiagnostics').addEventListener('click', function () {
+            alert('Diagnostics are running...');
+        });
+
+        // Update System
+        document.getElementById('updateSystem').addEventListener('click', function () {
+            alert('System is updating...');
+        });
+
+        // Clear Logs
+        document.getElementById('clearLogs').addEventListener('click', function () {
+            alert('Logs cleared successfully!');
+        });
+
+        // Delete Individual Records
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.classList.contains('delete')) {
+                e.target.closest('tr').remove();
+            }
+        });
+
+        // Edit Individual Records (Placeholder)
+    </script>
+</body>
+</html>

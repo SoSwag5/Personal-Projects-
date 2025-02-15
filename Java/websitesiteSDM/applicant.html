@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Portal - JobPro Recruitment System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Space below navigation */
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        /* File upload styling */
+        .file-upload {
+            border: 2px dashed #007BFF;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .file-upload:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Job Listings Styles */
+        .vacancy-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .vacancy-item {
+            font-size: 1.2rem;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateX(-50px);
+            visibility: hidden; /* Initially hidden */
+        }
+
+        .vacancy-item i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #007BFF;
+        }
+
+        .vacancy-item:hover {
+            transform: translateX(0);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fade-in effect */
+        .vacancy-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible; /* Make item visible */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Applicant Portal</h1>
+        <a href="home.html">Back to Home</a>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="employers.html">Employers</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="manager.html">Managers</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Create CV Section -->
+        <section id="create-cv">
+            <h2>Create Your CV</h2>
+            <div class="file-upload" onclick="document.getElementById('cvFile').click()">
+                <p>Drag and drop your CV here or click to upload</p>
+                <input type="file" id="cvFile" accept=".pdf,.doc,.docx">
+            </div>
+        </section>
+
+        <!-- View Job Vacancies Section -->
+        <section id="view-vacancies">
+            <h2>View Job Vacancies</h2>
+            <div class="vacancy-list">
+                <ul>
+                    <li class="vacancy-item">
+                        <i class="fas fa-laptop-code"></i> <strong>Software Engineer</strong> - ABC Tech (New York, NY)
+                    </li>
+                    <li class="vacancy-item">
+                        <i class="fas fa-database"></i> <strong>Data Analyst</strong> - DataCorp (San Francisco, CA)
+                    </li>
+                    <li class="vacancy-item">
+                        <i class="fas fa-bullhorn"></i> <strong>Marketing Specialist</strong> - Marketify (Austin, TX)
+                    </li>
+                    <li class="vacancy-item">
+                        <i class="fas fa-cogs"></i> <strong>Product Manager</strong> - Innovatech (Seattle, WA)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Track Applications Section -->
+        <section id="track-applications">
+            <h2>Track Your Applications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>ABC Tech</td>
+                        <td>Under Review</td>
+                    </tr>
+                    <tr>
+                        <td>Data Analyst</td>
+                        <td>DataCorp</td>
+                        <td>Accepted</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing Specialist</td>
+                        <td>Marketify</td>
+                        <td>Rejected</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JobPro Recruitment System. All rights reserved.</p>
+    </footer>
+
+    <!-- JS for Fade-in Effect -->
+    <script>
+        window.onload = function() {
+            const items = document.querySelectorAll('.vacancy-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('visible'); // Add 'visible' class after a small delay
+                }, index * 200); // Delay each item by 200ms
+            });
+        };
+    </script>
+</body>
+</html>

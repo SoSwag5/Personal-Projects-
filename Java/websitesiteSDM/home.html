@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobPro - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        main {
+            padding-top: 100px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            color: #007BFF;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Service Cards Hover Animation */
+        .service-card {
+            flex: 1 1 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Founder Section Animation */
+        .founder-img {
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .founder-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Founder Text Style */
+        .founder-text {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Terms and Conditions link styling */
+        #terms a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .service-card {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="JobPro Logo" class="logo">
+        <h1>Welcome to JobPro</h1>
+        <p>Your one-stop solution for job recruitment and hiring.</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="employers.html">Employers</a></li>
+            <li><a href="applicant.html">Applicants</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="manager.html">Managers</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>JobPro is an innovative recruitment platform that simplifies the hiring process for both job seekers and employers. By leveraging advanced technology and personalized matching, we connect talented individuals with the right opportunities, ensuring a seamless hiring experience.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Services</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <!-- Service Card 1 -->
+                <a href="employers.html" style="text-decoration: none; color: inherit;">
+                    <div class="service-card">
+                        <h3>📋 Job Listings for Employers</h3>
+                        <p>Post vacancies quickly and easily, reaching top-tier candidates efficiently.</p>
+                    </div>
+                </a>
+
+                <!-- Service Card 2 -->
+                <a href="applicant.html" style="text-decoration: none; color: inherit;">
+                    <div class="service-card">
+                        <h3>📝 CV Creation & Applications</h3>
+                        <p>Build your CV, browse opportunities, and apply for your dream job seamlessly.</p>
+                    </div>
+                </a>
+
+                <!-- Service Card 3 -->
+                <a href="admin.html" style="text-decoration: none; color: inherit;">
+                    <div class="service-card">
+                        <h3>⚙️ Admin Maintenance Tools</h3>
+                        <p>Admins can manage users, oversee job listings, and maintain system integrity.</p>
+                    </div>
+                </a>
+
+                <!-- Service Card 4 -->
+                <a href="manager.html" style="text-decoration: none; color: inherit;">
+                    <div class="service-card">
+                        <h3>📊 Reporting Tools for Managers</h3>
+                        <p>Generate detailed reports to drive decision-making and optimize hiring strategies.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Founder Section -->
+        <section id="founder">
+            <h2>About the Founder</h2>
+            
+            <!-- First paragraph with image on the left -->
+            <div class="founder-section">
+                <img src="images/me.jpg" alt="Founder Image" class="founder-img">
+                <p class="founder-text">
+                    Meet the founder of JobPro, a determined and ambitious Jordanian CEO. I built this platform from the ground up, driven by the need to succeed in a competitive industry. To achieve this, I’ve made tough decisions, often underpaying and overworking my team to maximize profits.
+                </p>
+            </div>
+
+            <!-- Second paragraph with image on the right -->
+            <div class="founder-section">
+                <img src="images/us.jpg" alt="Team Image" class="founder-img">
+                <p class="founder-text">
+                    Behind every great leader is an even greater team. My team, despite facing significant personal challenges, remains the backbone of JobPro. Many of them struggle with difficult living conditions, yet they continue to show incredible dedication and perseverance.
+                </p>
+            </div>
+        </section>
+
+        <!-- Terms and Conditions Section -->
+        <section id="terms">
+            <h2>Terms and Conditions</h2>
+            <p>By using JobPro, you agree to the terms and conditions set forth by our platform. Please read our full <a href="https://www.youtube.com/watch?v=vLKpdw6iOEw">Terms and Conditions</a> for more details.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JobPro Recruitment System. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
